@@ -1,0 +1,72 @@
+<!--generar un mosico de imagenes presentados en forma de tarjeta , con un efecto cuando se posiciona el cursor en una tarjeta 
+usando el input y parca con un color distinto el borde de la tartjeta todo esto se hace con un mismo input 
+eso se logra compartiendo el name en el input 
+cada tarjeta va contener:
+    una imagen , una descripcion y un precio 
+la tarjeta es mejor trabajarla en tipo flex
+*buscar como resaltar el elemento
+    -INVESTIGAR
+        -HOVER
+        -transition:transform()
+    TAREA PROXIMO MARTES
+        -TERMINAR EL CATALOGO USANDO LAS HERRAMIENTAS DISPONIBLES PARA LLENAR LA TARJET->IMAGEN DESCRIPCION Y MIERDA Y MEDIA MAS
+        PONERLE UN COLO DE FONDO ALA PAGINA Y IMPLEMENTAR CON UN HIPERVINVULO O CON EL VINVULO QUE PERMITA CAMBIAR DE MODO CLARO A MODO OBSCURO EL FONDO Y LA LETAR(PALETA  DE COLORES)
+-->
+<!DOCTYPE html>
+<html leng="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarjetas</title>    
+        <link href="" rel="stylesheet">
+        <!--grid-template-columns: repeat(auto-fit,minmax(120px,1fr);-> este sirve para que se aproveche los vordes de la pagina y se vallan acomodando por filas
+        *el 1fr -> es para calcular lo que queda disponible de la pagina 
+        *para dejar huecos entre las tarjetas se usa:minmax(120px,1fr) variando el 120 px 
+    -->
+        <!--Aqui va el css-->
+
+    </head>
+    <body>
+    <header class="header">
+      <h1>Tarea_Tarjetas</h1>
+      <p>Tarea 3 </p>
+    </header>
+        <div class="catalogo">
+        <div class="tarjeta">
+            <div class="tarjeta_imagen">
+                <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
+                alt="imagen de audifinoJAJAJ">
+            </div>
+            <div>Audifonos inalambricos</div>
+            <span>$800.00</span>
+        </div>
+        <!--si corremos esto va a aestar junto y para esa shit que no aparezcan juntos usamos el model grid-->
+        <div class="tarjeta">
+            <div class="tarjeta_imagen">
+                <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
+                alt="imagen de teclado">
+            </div>
+            <div>Teclado gamer 120 fps</div>
+            <span>$500.00</span>
+        </div>
+        <div class="tarjeta">
+            <img src="cambiamos la imagen ej.unteclado #notengointernet" 
+            alt="Tecladogamer">
+            <div>Teclado gamer 120 fps</div>
+            <span>$500.00</span>
+        </div>
+        <div class="tarjeta">
+            <img src="un lactoc #notengointernet" 
+            alt="lactoc">
+            <div>laptop pal boney </div>
+            <span>$8000.00</span>
+        </div>
+        <div class="tarjeta">
+            <img src="pese gamer #notengointernet" 
+            alt="pese gamer">
+            <div>Pc del xocas</div>
+            <span>$50000.00</span>
+        </div>
+    </div>
+    </body>
+</html>
