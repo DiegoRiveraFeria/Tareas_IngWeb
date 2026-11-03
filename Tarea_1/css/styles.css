@@ -1,108 +1,365 @@
-
 /* Variables globales */
+
 :root {
+
   font-family: system-ui, sans-serif;
+
   color: #1f2937;
+
   background: #a9c0ee;
 
+
+
   --color-primary: #2563eb;
+
   --color-surface: #ffffff;
+
   --color-border: #e5e7eb;
+
   --radius: 0.75rem;
 
+  --gap: 1rem;
+
+  --page-padding: clamp(1rem, 3vw, 2rem);
+
   /*como se especifican el campo de los colores aqui en el css */
+
 }
 
-/* Reset básico 
+
+
+/* Reset básico
+
 el modelo de cajas es los sig :
+
 aqui indica que ciertesa propiedades van a tener cierto comportamiento
-* {
-  box-sizing: border-box;esta indica que forme parte de 
-  magin: 0; margenes en 0 
+
+{
+  box-sizing: border-box;esta indica que forme parte de
+
+  magin: 0; margenes en 0
+
   padding:0;
-}
-*/
-* {
-  box-sizing: border-box;
+
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
+*/
+
+*{
+  box-sizing: border-box;
+
 }
+
+
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+}
+
+
 
 a {
+
   color: inherit;
+
   text-decoration: none;
+
 }
+
+
+
+a:hover {
+
+  color: var(--color-primary);
+
+}
+
+
+
+/* Holy Grail Layout */
 
 .layout {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 100%;
-  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(180px, 220px)
+
+    minmax(0, 1fr)
+
+    minmax(180px, 240px);
+
+
+
+  grid-template-rows: auto auto minmax(60vh, 1fr) auto;
+
+
+
+  grid-template-areas:
+
+    "header  header  header"
+
+    "nav     nav     nav"
+
+    "left    main    right"
+
+    "footer  footer  footer";
+
+
+
+  gap: var(--gap);
+
+  min-height: 100vh;
+
+  padding: var(--page-padding);
+
   max-width: 1600px;
-  margin: 0 auto;
+
+  margin-inline: auto;
+
 }
+
+
 
 /* Regiones */
-.header, .nav, .footer {
-  width: 100%;
-  margin-bottom: 16px;
-}
 
 .header {
-  background: #2563eb;
+
+  grid-area: header;
+
+  background: var(--color-primary);
+
   color: white;
+
 }
+
+
 
 .nav {
+
+  grid-area: nav;
+
   display: flex;
-  gap: 24px;
-  background: #ffffff;
+
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+
+  background: var(--color-surface);
+
 }
 
-.sidebar-left, .sidebar-right {
-  width: 200px;
-  background: #ffffff;
+
+
+.sidebar-left {
+
+  grid-area: left;
+
 }
+
+
 
 .main {
-  flex: 1;
-  margin: 0 16px;
-  background: #ffffff;
+
+  grid-area: main;
+
+  min-width: 0;
+
 }
+
+
+
+.sidebar-right {
+
+  grid-area: right;
+
+}
+
+
 
 .footer {
+
+  grid-area: footer;
+
   background: #111827;
+
   color: white;
+
 }
+
+
 
 /* Estilos compartidos */
-.header, .nav, .sidebar-left, .sidebar-right, .main, .footer {
-  padding: 24px;
-  border-radius: 12px;
+
+.header,
+
+.nav,
+
+.sidebar,
+
+.main,
+
+.footer {
+
+  padding: 1.5rem;
+
+  border-radius: var(--radius);
+
 }
 
-.nav, .sidebar-left, .sidebar-right, .main {
-  border: 1px solid #e5e7eb;
+
+
+.nav,
+
+.sidebar,
+
+.main {
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
 }
 
-ul {
-  padding-left: 20px;
+
+
+.sidebar ul {
+
+  padding-left: 1.25rem;
+
 }
 
-h1, h2, p {
+
+
+.sidebar li + li {
+
+  margin-top: 0.75rem;
+
+}
+
+
+
+h1,
+
+h2,
+
+p {
+
   margin-top: 0;
+
 }
+
+
 
 .footer p {
+
   margin-bottom: 0;
+
 }
 
-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; /* este pedo es para que la img se vea en forma de circulo */
-  object-fit: cover; /* propiedad que evita que la imagen se deforme */
+
+
+/* Tablet y móvil */
+
+@media (max-width: 800px) {
+
+  .layout {
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+
+
+    grid-template-rows: auto auto auto auto auto;
+
+
+
+    grid-template-areas:
+
+      "header header"
+
+      "nav    nav"
+
+      "main   main"
+
+      "left   right"
+
+      "footer footer";
+
+  }
+
 }
+
+
+
+@media (max-width: 520px) {
+
+  .layout {
+
+    grid-template-columns: minmax(0, 1fr);
+
+
+
+    grid-template-rows: auto;
+
+
+
+    grid-template-areas:
+
+      "header"
+
+      "nav"
+
+      "main"
+
+      "left"
+
+      "right"
+
+      "footer";
+
+  }
+
+
+
+  .header,
+
+  .nav,
+
+  .sidebar,
+
+  .main,
+
+  .footer {
+
+    padding: 1rem;
+
+  }
+
+
+
+  .nav {
+
+    gap: 1rem;
+
+  }
+
+}
+
+
+
+  img {
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;/*esto es para que la img se vea en forma de circulo*/
+
+    object-fit: cover;/*propiedad que evita que la imagen se deforme */
+
+  } 
