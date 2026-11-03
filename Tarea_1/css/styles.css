@@ -9,8 +9,7 @@
   --color-surface: #ffffff;
   --color-border: #e5e7eb;
   --radius: 0.75rem;
-  --gap: 1rem;
-  --page-padding: clamp(1rem, 3vw, 2rem);
+
   /*como se especifican el campo de los colores aqui en el css */
 }
 
