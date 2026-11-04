@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de tarjetas</title>
+    <link href="estilos_tarjeta.css" rel="stylesheet">
+    
+    <!-- vinculamos el script -->
+    <script src="script.js" defer></script>
+</head>
+<body style="margin: 0;">
+    <div id="oscuro" class="contenedor-principal">
+        
+        <div class="controles-tema">
+            <a href="#">Modo Claro</a>
+            <a href="#oscuro">Modo Oscuro</a>
+        </div>
+
+        <!-- ponemos el campo de búsqueda -->
+        <div class="buscador-container" style="padding: 16px; text-align: center;">
+            <input type="text" id="inputBusqueda" placeholder="Buscar producto...">
+        </div>
+
+        <div class="catalogo">
+            
+        <!--a cada tarjeta se le agrega su nombre paar poder buscarlo en la barra -->
+            <div class="tarjeta" data-nombre="Audifonos inalambricos">
+                <img src="https://images.unsplash.com/photo-1781652458706-9576a77fa01a?w=500&auto=format&fit=crop&q=60" alt="Audifonos"> 
+                <div>Audifonos inalambricos</div>      
+                <span>$800.00</span>
+            </div> 
+
+            <div class="tarjeta" data-nombre="Teclado negro">
+                <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500&auto=format&fit=crop&q=60" alt="Teclado"> 
+                <div>Teclado negro</div>      
+                <span>$300.00</span>
+            </div>
+
+            <div class="tarjeta" data-nombre="smart watch">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSq6BtFHbspsqkW1e-tLBS4KW5IKtMZwQ3Xtx5g36_oh2kGEYNEfaCi8E&s=10" alt="smart watch"> 
+                <div>smart watch</div>      
+                <span>$800.00</span>
+            </div> 
+
+            <div class="tarjeta" data-nombre="Telefono inteligente">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiqzt_EcIWESixHPDb8u5MVyowfzEIt8apaR2OLW-BLDeqXWxmgx_jNIJI&s=10" alt="Telefono"> 
+                <div>Telefono inteligente</div>      
+                <span>$500.00</span>
+            </div>
+
+        </div> 
+    </div>
+
+</body>
+</html>

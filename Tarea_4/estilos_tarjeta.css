@@ -1,0 +1,75 @@
+/*Los colores iniciale o modo claro*/
+.contenedor-principal {
+    --bg-page: #f2dbcb;
+    --text-color: #000000;
+    --bg-tarjeta: antiquewhite;
+    --shadow-tarjeta: rgba(126, 188, 111, 0.7);
+    --hover-border: rgba(20, 21, 20, 0.7);
+    
+    background-color: var(--bg-page);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+    padding-top: 20px;
+}
+
+/* Modo Oscuro usando el hipervinvulo*/
+#oscuro:target {
+    --bg-page: #1a1a1a;
+    --text-color: #ffffff;
+    --bg-tarjeta: #333333;
+    --shadow-tarjeta: rgba(0, 0, 0, 0.8);
+    --hover-border: rgba(255, 255, 255, 0.7);
+}
+
+/*le damos forma alos botones para cambiar de tema*/
+.controles-tema {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.controles-tema a {
+    padding: 5px 15px;
+    margin: 10px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.catalogo {
+    width: 100%;
+    margin: 0 auto;  
+    display: grid;   
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-items: center;
+}
+
+.tarjeta {
+    width: 320px;  
+    height: 320px;
+    padding: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    border-radius: 10%;          
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-tarjeta);
+    box-shadow: 3px 3px var(--shadow-tarjeta);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* aqui se implementa el efecto hover */
+.tarjeta:hover {
+    border: 2px solid var(--hover-border);  
+    transform: scale(1.05);
+}
+
+.tarjeta img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+    margin-bottom: 5px;
+}
+
