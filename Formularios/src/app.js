@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true })); // Permite leer datos de formul
 
 // --- RUTAS ---
 
-// 1. Ruta para Iniciar Sesión
+// Ruta para Iniciar Sesión
 app.post('/login', (req, res) => {
     const email = req.body.email;
     const contrasena = req.body.contrasena; 
@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
     `);
 });
 
-// 2. Ruta para Recuperar Contraseña
+//  Ruta para Recuperar Contraseña
 app.post('/recuperar', (req, res) => {
     const correoRecuperar = req.body.correo_recuperar; 
 
@@ -35,7 +35,7 @@ app.post('/recuperar', (req, res) => {
     `);
 });
 
-// 3. Ruta para Crear Cuenta (Registro)
+// Ruta para Crear Cuenta (Registro)
 app.post('/registro', (req, res) => {
     const nuevoUsuario = req.body.nuevo_usuario;
     const nuevaContrasena = req.body.nueva_contrasena; 
