@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- Radio buttons para cambiar de vista -->
+        <input type="radio" id="inicio" name="grupo-formularios" class="control-pestana" checked>
+        <input type="radio" id="recuperar" name="grupo-formularios" class="control-pestana">
+        <input type="radio" id="registro" name="grupo-formularios" class="control-pestana">
+
+        <!-- Vista principal: Iniciar Sesión -->
+        <div id="vista-inicio" class="vista-formulario">
+            <h2>Iniciar Sesión</h2>
+            <form method="POST" action="/login">
+                <div>
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="email" name="email" id="usuario" required placeholder="correo electrónico">
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" name="contrasena" id="contrasena" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,13}" title="Minimo 8 caracteres, al menos una mayuscula, una minuscula y un numero">
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div class="enlaces-cambio">
+                <label for="recuperar" class="enlace">Recuperar contraseña</label>
+                <label for="registro" class="enlace">Registrarse</label>
+            </div>
+        </div>
+
+        <!-- Vista: Recuperar contraseña -->
+        <div id="vista-recuperar" class="vista-formulario">
+            <h2>Recuperar Contraseña</h2>
+            <form method="POST" action="/recuperar">
+                <div>
+                    <label for="correo-recuperar">Ingresa tu correo registrado:</label>
+                    <input type="email" name="correo_recuperar" id="correo-recuperar" required placeholder="correo electrónico">
+                </div>
+                <button type="submit">Enviar enlace</button>
+            </form>
+
+            <div class="enlaces-cambio">
+                <label for="inicio" class="enlace">Volver a Iniciar Sesión</label>
+            </div>
+        </div>
+
+        <!-- Vista: Registro -->
+        <div id="vista-registro" class="vista-formulario">
+            <h2>Crear Cuenta</h2>
+            <form method="POST" action="/registro">
+                <div>
+                    <label for="nuevo-usuario">Correo electrónico:</label>
+                    <input type="email" name="nuevo_usuario" id="nuevo-usuario" required placeholder="correo electrónico">
+                </div>
+                <div>
+                    <label for="nueva-contrasena">Crea una contraseña:</label>
+                    <input type="password" name="nueva_contrasena" id="nueva-contrasena" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,13}" title="Minimo 8 caracteres, al menos una mayuscula, una minuscula y un numero">
+                </div>
+                <button type="submit">Registrarme</button>
+            </form>
+
+            <div class="enlaces-cambio">
+                <label for="inicio" class="enlace">Ya tengo cuenta (Iniciar Sesión)</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
